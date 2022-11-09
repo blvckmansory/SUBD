@@ -26,7 +26,7 @@
 ## Сущности
   
 * Пользователь 
-    * **id(int)** One to One к Роли
+    * **UserId(int)** One to One к Роли
     * **UserEmail(string)**
     * **UserPassword(string)**
 * **Категория:**  
@@ -36,8 +36,9 @@
     * **id(int)** Many to One к Категории, One to Many к Накладная-Продукт, One to Many к Деталям Заказа, One to Many к Корзине
     * **Name(string 255)**
     * **Price(double >0)**
-    * **Availibility(bool Default: true)**
+    *  **Description(string 255)**
     * **Count(int >0)**
+    * **Availibility(bool Default: true)**
 * Платежные данные 
     * **id(int)** One to One к Клиенту
     * **NumberCard(int <=19)**
