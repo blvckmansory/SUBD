@@ -45,8 +45,8 @@
 * **Product** - продукт
     * **ProductId(uuid)** - идентификатор продукта, Many to One к Категории, Many to Many к Производству, One to Many к Отзывам, Оценке
     * **IdCategory(uuid)** - идентификатор категории
-    * **Name(varchar(50))** - название продукта
-    * **Price(float >0)** - цена
+    * **Name(varchar(64))** - название продукта
+    * **Price(float>0)** - цена
     * **Description(varchar(1000))** - описание продукта
     * **Images(varchar(100))** - путь к изображениям продукта
     * **Availibility (bool)** - доступность продукта
@@ -58,16 +58,16 @@
 
 * **Manufacturer** - изготовитель
     * **IdManufacturer(uuid)** - идентификатор производства
-    * **Name(varchar(50))** - название производства
-    * **Country(varchar(50))** - страна производитель
+    * **Name(varchar(64))** - название производства
+    * **Country(varchar(64))** - страна производитель
 
 * **Log** - журнал активности пользователя
     * **IdUser(uuid)** - идентификатор
     * **Date(datetime)** - дата и время действий пользователя
-    * **Info(varchar(100))** - действие пользователя
+    * **Info(varchar(1000))** - действие пользователя
 
 * **Feedback** - отзывы о продукте
-    * **User(uuid(IdUser))** - One to One к feedback user
+    * **User(uuid(IdUser))** 
     * **IdFeedback(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
     * **Text(varchar(200))** - текст отзыва
