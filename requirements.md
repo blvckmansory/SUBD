@@ -28,15 +28,15 @@
 * **User** - все пользователи 
     * **UserId(uuid)** - идентификатор пользователя, Many to One к Роли
     * **RoleId(uuid)** - идентификатор роли
-    * **Name(varchar(20))** - имя пользователя
-    * **LastName(varchar(20))** - фамилия пользователя
-    * **PhoneNumber(varchar(20))** - номер пользователя
-    * **UserEmail(varchar(50))** - эл. почта пользователя
-    * **UserPassword(varchar(250))** - пароль
+    * **Name(varchar(64))** - имя пользователя
+    * **LastName(varchar(64))** - фамилия пользователя
+    * **PhoneNumber(varchar(32))** - номер пользователя
+    * **UserEmail(varchar(64))** - эл. почта пользователя
+    * **UserPassword(varchar(64))** - пароль
 
 * **Role** - роли пользователей
     * **IdRole(uuid)** - идентификатор
-    * **Name(varchar(20))** - название роли
+    * **Name(varchar(64))** - название роли
 
 * **Category** - категория 
     *  **CategoryId(uuid)** - ид. номер категории - One to Many к Продукту  
@@ -47,28 +47,19 @@
     * **IdCategory(uuid)** - идентификатор категории
     * **Name(varchar(50))** - название продукта
     * **Price(float >0)** - цена
-    * **Specification(varchar(500))** - спецификации продукта
-    * **Description(varchar(500))** - описание продукта
+    * **Description(varchar(1000))** - описание продукта
     * **Images(varchar(100))** - путь к изображениям продукта
     * **Availibility (bool)** - доступность продукта
 
 * **Order** - заказ
     * **OrderId(uuid)** - идентификатор заказа
-    * **User(uuid)** - идентификатор пользователя
+    * **UserId(uuid)** - идентификатор пользователя
     * **Date(datetime)** - дата и время оформления заказа
 
 * **Manufacturer** - изготовитель
     * **IdManufacturer(uuid)** - идентификатор производства
     * **Name(varchar(50))** - название производства
     * **Country(varchar(50))** - страна производитель
-
-* **ManufacturerProduct** - many-to-many table между Manufacturer и Product
-    * **IdManufacturer(uuid)** - идентификатор
-    * **IdProduct(uuid)** - идентификатор
-
-* **ProductOrder** - many-to-many table between Order and Product
-    * **IdOrder(uuid)** - идентификатор
-    * **IdProduct(uuid)** - идентификатор
 
 * **Log** - журнал активности пользователя
     * **IdUser(uuid)** - идентификатор
