@@ -73,11 +73,11 @@
     * **IdProduct(uuid)** - идентификатор
     * **Text(varchar(200))** - текст отзыва
 
-Rate - product rate
-IdRate - uuid
-IdProduct - uuid(foreign key)
-Value - tinyint(product rate from 1 to 5)
-User - uuid(IdUser, one to one rate user)
+* **Rate** - оценка продукта
+    * **IdRate(uuid)** - идентификатор
+    * **IdProduct(uuid) - идентификатор
+    * **Value - tinyint(product rate from 1 to 5)
+    * **User - uuid(IdUser, one to one rate user)
 * Платежные данные 
     * **id(int)** One to One к Клиенту
     * **NumberCard(int <=19)**
