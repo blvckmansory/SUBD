@@ -25,7 +25,7 @@
 
 ## Сущности
   
-* User - все пользователи 
+* **User** - все пользователи 
     * **UserId(int)** - UUID - Many to One к Роли
     * **RoleId(string)** - ключ
     * **Name(varchar(20))** - имя пользователя
@@ -33,16 +33,18 @@
     * **PhoneNumber(varchar(20))** - номер пользователя
     * **UserEmail(varchar(50))** - эл. почта пользователя
     * **UserPassword(varchar(250))** - пароль
-* **Категория:**  
-    *  **id(int)** One to Many к Продукту  
-    *  **CategoryName(string 255)**   
-* **Продукт**
-    * **id(int)** Many to One к Категории, One to Many к Накладная-Продукт, One to Many к Деталям Заказа, One to Many к Корзине
-    * **Name(string 255)**
-    * **Price(double >0)**
-    *  **Description(string 255)**
-    * **Count(int >0)**
-    * **Availibility(bool Default: true)**
+* **Category** - категория 
+    *  **CategoryId(int)** - ид. номер категории - One to Many к Продукту  
+    *  **CategoryName(varchar(30))** - название категории   
+* **Product** - продукт
+    * **ProductId(int)** Many to One к Категории, Many to Many к Производству, One to Many к Отзывам, Оценке
+    * **IdCategory(int)** - номер категории
+    * **Name(varchar(50))** - название продукта
+    * **Price(float >0)** - цена
+    * **Specification(varchar(500))** - спецификации продукта
+    * **Description(varchar(500))** - описание продукта
+    * **Images(varchar(100))** - путь к изображениям продукта
+    * **Availibility (bool)** - доступность продукта
 * Платежные данные 
     * **id(int)** One to One к Клиенту
     * **NumberCard(int <=19)**
