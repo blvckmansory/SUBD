@@ -33,12 +33,15 @@
     * **PhoneNumber(varchar(20))** - номер пользователя
     * **UserEmail(varchar(50))** - эл. почта пользователя
     * **UserPassword(varchar(250))** - пароль
+
 * **Role** - роли пользователей
     * **IdRole(uuid)** - идентификатор
     * **Name(varchar(20)) - название роли
+
 * **Category** - категория 
     *  **CategoryId(uuid)** - ид. номер категории - One to Many к Продукту  
     *  **CategoryName(varchar(30))** - название категории   
+
 * **Product** - продукт
     * **ProductId(uuid)** - идентификатор продукта, Many to One к Категории, Many to Many к Производству, One to Many к Отзывам, Оценке
     * **IdCategory(uuid)** - идентификатор категории
@@ -48,29 +51,36 @@
     * **Description(varchar(500))** - описание продукта
     * **Images(varchar(100))** - путь к изображениям продукта
     * **Availibility (bool)** - доступность продукта
+
 * **Order** - заказ
     * **OrderId(uuid)** - идентификатор заказа
     * **User(uuid)** - идентификатор пользователя
     * **Date(datetime)** - дата и время оформления заказа
+
 * **Manufacturer** - изготовитель
     * **IdManufacturer(uuid)** - идентификатор производства
     * **Name(varchar(50))** - название производства
     * **Country(varchar(50))** - страна производитель
+
 * **ManufacturerProduct** - many-to-many table между Manufacturer и Product
     * **IdManufacturer(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
+
 * **ProductOrder** - many-to-many table between Order and Product
     * **IdOrder(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
+
 * **Log** - журнал активности пользователя
     * **IdUser(uuid)** - uuid(foreign key)
     * **Date(datetime)** - дата и время действий пользователя
     * **Info(varchar(100))** - действие пользователя
+
 * **Feedback** - отзывы о продукте
     * **User(uuid(IdUser))** - One to One к feedback user
     * **IdFeedback(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
     * **Text(varchar(200))** - текст отзыва
+
 * **Rate** - оценка продукта
     * **IdRate(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
