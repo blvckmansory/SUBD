@@ -25,10 +25,14 @@
 
 ## Сущности
   
-* Пользователь (User) 
-    * **UserId(int)** One to One к Роли
-    * **UserEmail(string)**
-    * **UserPassword(string)**
+* User - все пользователи 
+    * **UserId(int)** - UUID - Many to One к Роли
+    * **RoleId(string)** - ключ
+    * **Name(varchar(20))** - имя пользователя
+    * **LastName(varchar(20))** - фамилия пользователя
+    * **PhoneNumber(varchar(20))** - номер пользователя
+    * **UserEmail(varchar(50))** - эл. почта пользователя
+    * **UserPassword(varchar(250))** - пароль
 * **Категория:**  
     *  **id(int)** One to Many к Продукту  
     *  **CategoryName(string 255)**   
