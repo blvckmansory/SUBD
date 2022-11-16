@@ -33,6 +33,9 @@
     * **PhoneNumber(varchar(20))** - номер пользователя
     * **UserEmail(varchar(50))** - эл. почта пользователя
     * **UserPassword(varchar(250))** - пароль
+* **Role** - роли пользователей
+    * **IdRole(uuid)** - идентификатор
+    * **Name(varchar(20)) - название роли
 * **Category** - категория 
     *  **CategoryId(uuid)** - ид. номер категории - One to Many к Продукту  
     *  **CategoryName(varchar(30))** - название категории   
@@ -55,8 +58,8 @@
     * **Country(varchar(50))** - страна производитель
 
 * **ManufacturerProduct** - many-to-many table между Manufacturer и Product
-    * **IdManufacturer(uuid) - идентификатор
-    * **IdProduct(uuid) - идентификатор
+    * **IdManufacturer(uuid)** - идентификатор
+    * **IdProduct(uuid)** - идентификатор
 
 * **ProductOrder - many-to-many table between Order and Product
     * **IdOrder(uuid)** - идентификатор
@@ -75,31 +78,6 @@
 
 * **Rate** - оценка продукта
     * **IdRate(uuid)** - идентификатор
-    * **IdProduct(uuid) - идентификатор
-    * **Value - tinyint(product rate from 1 to 5)
-    * **User - uuid(IdUser, one to one rate user)
-* Платежные данные 
-    * **id(int)** One to One к Клиенту
-    * **NumberCard(int <=19)**
-    * **PaymentDate(Date)**
-    * **TimeTransaction(decimal)**
-* Клиент
-    * **id(int)** One to One к Платежным данным,  Many to One к Роли, Many to One к Заказа
-    * **FirstName(string 255)**
-    * **SecondName(string 255)**
-    * **PhoneNumber(decimal)** 
-* Менеджер
-    * **id(int)** One to One к Платежным данным,  Many to One к Роли, Many to One к Заказа
-    * **ManagerName(string)**
-    * **ManagerSecondName(string 255)**
-    * **PhoneNumber(decimal)** 
-* Корзина 
-    * **id(int)** One to One к Заказу, Many to One к Продукту, One to One к Клиенту
-    * **EmptyCart(bool)**
-* Заказ
-    * **id(int)** One to One к Корзине, One to Many к Клиенту
-    * **OrderNumber(decimal)**
-    * **OrderDate(Date)**
-    * **Status(bool)** 
-* Роль 
-    **id(int)** One to Many к Менеджеру, One to Many к Клиенту  
+    * **IdProduct(uuid)** - идентификатор
+    * **Value(int)** - оценка продукта от 1 до 5
+    * **User(uuid)** - IdUser, one to one rate user
