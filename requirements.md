@@ -56,26 +56,21 @@
     * **IdManufacturer(uuid)** - идентификатор производства
     * **Name(varchar(50))** - название производства
     * **Country(varchar(50))** - страна производитель
-
 * **ManufacturerProduct** - many-to-many table между Manufacturer и Product
     * **IdManufacturer(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
-
-* **ProductOrder - many-to-many table between Order and Product
+* **ProductOrder** - many-to-many table between Order and Product
     * **IdOrder(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
-
 * **Log** - журнал активности пользователя
     * **IdUser(uuid)** - uuid(foreign key)
     * **Date(datetime)** - дата и время действий пользователя
     * **Info(varchar(100))** - действие пользователя
-
 * **Feedback** - отзывы о продукте
     * **User(uuid(IdUser))** - One to One к feedback user
     * **IdFeedback(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
     * **Text(varchar(200))** - текст отзыва
-
 * **Rate** - оценка продукта
     * **IdRate(uuid)** - идентификатор
     * **IdProduct(uuid)** - идентификатор
