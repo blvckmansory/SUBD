@@ -78,6 +78,14 @@
     * **Value(int)** - оценка продукта от 1 до 5
     * **User(uuid)** - IdUser, one to one rate user
 
+* **ManufacturerProduct**
+    * **IdManufacturer(uuid)** - идентификатор
+    * **IdProduct(uuid)** - идентификатор
+
+* **ProductOrder**
+    * **IdOrder(uuid)** - идентификатор
+    * **IdProduct(uuid)** - идентификатор
+
 
 Нормализованная диаграммма классов:
 ![alt text](images/Normalized.png)
